@@ -1,14 +1,20 @@
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
+use reqwest::Client;
+
+#[derive(Debug, Default)]
+pub struct XivApi {
+    client: Client,
+    key: Option<String>,
 }
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+impl XivApi {
+    pub fn new() -> Self {
+        let client = Client::new();
+        Self { client, key: None }
+    }
 
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
+    pub fn with_key<S: AsRef<str>>(key: S) -> Self {
+        let client = Client::new();
+        let key = Some(key.as_ref().to_string());
+        Self { client, key }
     }
 }
