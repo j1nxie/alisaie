@@ -1,3 +1,5 @@
+pub mod character;
+
 #[macro_export]
 macro_rules! enum_numbers {
     ($name:ident { $($variant:ident = $value:expr, )* }) => {
