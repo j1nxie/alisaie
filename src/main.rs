@@ -1,11 +1,7 @@
 use dotenvy::dotenv;
 use serenity::{
     async_trait,
-    model::prelude::{
-        command::Command,
-        interaction::{Interaction, InteractionResponseType},
-        Ready,
-    },
+    model::prelude::{command::Command, interaction::Interaction, Ready},
     prelude::*,
 };
 use std::env;
@@ -20,21 +16,12 @@ impl EventHandler for Handler {
         if let Interaction::ApplicationCommand(command) = interaction {
             println!("Received command interaction: {:#?}", command);
 
-            let content = match command.data.name.as_str() {
-                "ping" => commands::ping::run(&command.data.options),
-                _ => String::from("not implemented :("),
-            };
-
-            if let Err(why) = command
-                .create_interaction_response(&ctx.http, |response| {
-                    response
-                        .kind(InteractionResponseType::ChannelMessageWithSource)
-                        .interaction_response_data(|message| message.content(content))
-                })
-                .await
-            {
+            if let Err(why) = match command.data.name.as_str() {
+                "ping" => commands::ping::run(&command, &ctx).await,
+                _ => Ok(()),
+            } {
                 println!("cannot respond to slash command: {:#?}", why);
-            }
+            };
         }
     }
 
