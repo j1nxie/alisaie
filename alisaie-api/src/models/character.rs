@@ -10,3 +10,8 @@ enum_numbers!(Race {
     Viera = 7,
 });
 
+enum_numbers!(Gender {
+    Male = 1,
+    Female = 2,
+});
+
