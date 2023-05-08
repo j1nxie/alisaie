@@ -55,3 +55,25 @@ enum_numbers!(Tribe {
     Veena = 14,
 });
 
+// FIXME: check between 19 and 46 to see which is Tenacity and which is Spell Speed.
+enum_numbers!(Attributes {
+    Strength = 1,
+    Dexterity = 2,
+    Vitality = 3,
+    Intelligence = 4,
+    Mind = 5,
+    Piety = 6,
+    Hp = 7,
+    Mp = 8,
+    Tenacity = 19,
+    AttackPower = 20,
+    Defense = 21,
+    DirectHitRate = 22,
+    MagicDefense = 24,
+    CriticalHitRate = 27,
+    AttackMagicPotency = 33,
+    HealingMagicPotency = 34,
+    Determination = 44,
+    SkillSpeed = 45,
+    SpellSpeed = 46,
+});
