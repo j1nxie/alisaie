@@ -37,3 +37,21 @@ enum_numbers!(Town {
     Ishgard = 4,
     Kugane = 7,
 });
+
+enum_numbers!(Tribe {
+    Midlander = 1,
+    Highlander = 2,
+    Wildwood = 3,
+    Duskwight = 4,
+    Plainsfolk = 5,
+    Dunesfolk = 6,
+    SeekerOfTheSun = 7,
+    SeekerOfTheMoon = 8,
+    SeaWolf = 9,
+    Hellsguard = 10,
+    Raen = 11,
+    Xaela = 12,
+    Rava = 13,
+    Veena = 14,
+});
+
