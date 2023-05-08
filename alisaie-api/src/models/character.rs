@@ -15,3 +15,17 @@ enum_numbers!(Gender {
     Female = 2,
 });
 
+enum_numbers!(GuardianDeity {
+    Halone = 1,
+    Menphina = 2,
+    Thaliak = 3,
+    Nymeia = 4,
+    Llymlaen = 5,
+    Oschon = 6,
+    Byregot = 7,
+    Rhalgr = 8,
+    Azeyma = 9,
+    NaldThal = 10,
+    Nophica = 11,
+    Althyk = 12,
+});
