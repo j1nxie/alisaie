@@ -29,3 +29,11 @@ enum_numbers!(GuardianDeity {
     Nophica = 11,
     Althyk = 12,
 });
+
+enum_numbers!(Town {
+    LimsaLominsa = 1,
+    Gridania = 2,
+    UlDah = 3,
+    Ishgard = 4,
+    Kugane = 7,
+});
