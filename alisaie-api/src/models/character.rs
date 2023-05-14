@@ -1,4 +1,50 @@
+use std::collections::BTreeMap;
 use crate::enum_numbers;
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct ClassJob {
+    #[serde(rename = "ClassID")]
+    pub class_id: u64,
+    #[serde(rename = "JobID")]
+    pub job_id: u64,
+    pub exp_level: u64,
+    pub exp_level_max: u64,
+    pub exp_level_remaining: u64,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct GearSet {
+    #[serde(rename = "ClassID")]
+    pub class_id: u64,
+    #[serde(rename = "JobID")]
+    pub job_id: u64,
+    pub level: u64,
+    pub gear_key: String,
+    pub attributes: BTreeMap<String, u64>,
+    pub gear: BTreeMap<String, Gear>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct Gear {
+    #[serde(rename = "ID")]
+    pub id: Option<u64>,
+    pub dye: Option<u64>,
+    pub mirage: Option<serde_json::Value>,
+    pub materia: Vec<u64>,
+    pub creatore: Option<u64>,
+}
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct GrandCompany {
+    #[serde(rename = "NameID")]
+    pub name_id: u64,
+    #[serde(rename = "RankID")]
+    pub rank_id: u64,
+}
 
 enum_numbers!(Race {
     Hyur = 1,
