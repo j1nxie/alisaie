@@ -1,5 +1,41 @@
 use std::collections::BTreeMap;
+
+use chrono::{DateTime, Utc};
+use ffxiv_types::World;
+use serde::Deserialize;
+use url::Url;
+
 use crate::enum_numbers;
+
+#[derive(Debug, Deserialize)]
+#[serde(rename_all = "PascalCase")]
+pub struct Character {
+    #[serde(rename = "ID")]
+    pub id: u64,
+    pub name: String,
+    pub nameday: String,
+    pub parse_date: DateTime<Utc>,
+    #[serde(rename = "PvPTeam")]
+    pub pvp_team: Option<serde_json::Value>,
+    pub race: Race,
+    pub tribe: Tribe,
+    pub server: World,
+    pub town: Town,
+    #[serde(with = "url_serde")]
+    pub avatar: Url,
+    pub bio: String,
+    pub free_company_id: Option<u64>,
+    pub gender: Gender,
+    pub guardian_deity: GuardianDeity,
+    pub minions: Vec<u64>,
+    pub mounts: Vec<u64>,
+    pub class_jobs: BTreeMap<String, ClassJob>,
+    pub gear_set: GearSet,
+    pub grand_company: GrandCompany,
+    pub active_class_job: ClassJob,
+    #[serde(with = "url_serde")]
+    pub portrait: Url,
+}
 
 #[derive(Debug, Deserialize)]
 #[serde(rename_all = "PascalCase")]
