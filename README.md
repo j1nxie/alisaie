@@ -1,5 +1,23 @@
 # alisaie 
 
+`alisaie` is composed of two parts: `alisaie-api` and `alisaie-bot`, providing
+an API wrapper over [XIVAPI](https://xivapi.com) and a Discord bot for
+FFXIV-related functionalities.
+
+## crates
+
+### [`alisaie-api`](alisaie-api)
+
+an API wrapper for [XIVAPI](https://xivapi.com). this implementation is mostly
+based off of [ascclemens'](https://github.com/ascclemens) [API
+wrapper](https://github.com/ascclemens/xivapi-rs), but rewritten for newer
+versions of Rust and dependencies.
+
+### [`alisaie-bot`](alisaie-bot)
+
+a Discord bot using [`serenity-rs`](https://github.com/serenity-rs/serenity),
+utilizing `alisaie-api` for FFXIV functionalities.
+
 ## license
 
 licensed under either of
