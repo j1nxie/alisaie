@@ -68,7 +68,7 @@ pub struct Gear {
     pub dye: Option<u64>,
     pub mirage: Option<serde_json::Value>,
     pub materia: Vec<u64>,
-    pub creatore: Option<u64>,
+    pub creator: Option<u64>,
 }
 
 #[derive(Debug, Deserialize)]
