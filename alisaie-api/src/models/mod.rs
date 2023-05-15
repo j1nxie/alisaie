@@ -1,4 +1,5 @@
 pub mod character;
+pub mod search;
 
 #[macro_export]
 macro_rules! enum_numbers {
