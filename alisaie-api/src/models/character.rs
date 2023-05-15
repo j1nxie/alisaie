@@ -59,7 +59,7 @@ pub struct GearSet {
     pub level: u64,
     pub gear_key: String,
     pub attributes: BTreeMap<String, u64>,
-    pub gear: BTreeMap<String, Gear>,
+    pub gear: BTreeMap<GearSlot, Gear>,
 }
 
 #[derive(Debug, Deserialize)]
@@ -80,6 +80,24 @@ pub struct GrandCompany {
     pub name_id: u64,
     #[serde(rename = "RankID")]
     pub rank_id: u64,
+}
+
+#[derive(Debug, Deserialize, PartialOrd, Ord, PartialEq, Eq)]
+#[serde(rename_all = "PascalCase")]
+pub enum GearSlot {
+    MainHand,
+    Head,
+    Body,
+    Hands,
+    Legs,
+    Feet,
+    OffHand,
+    Earrings,
+    Necklace,
+    Bracelets,
+    Ring1,
+    Ring2,
+    SoulCrystal,
 }
 
 enum_numbers!(Race {
