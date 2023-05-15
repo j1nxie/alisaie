@@ -1,5 +1,7 @@
 use reqwest::Client;
 
+pub mod models;
+
 #[derive(Debug, Default)]
 pub struct XivApi {
     client: Client,
