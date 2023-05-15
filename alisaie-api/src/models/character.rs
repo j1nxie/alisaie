@@ -21,7 +21,6 @@ pub struct Character {
     pub tribe: Tribe,
     pub server: World,
     pub town: Town,
-    #[serde(with = "url_serde")]
     pub avatar: Url,
     pub bio: String,
     pub free_company_id: Option<u64>,
@@ -33,7 +32,6 @@ pub struct Character {
     pub gear_set: GearSet,
     pub grand_company: GrandCompany,
     pub active_class_job: ClassJob,
-    #[serde(with = "url_serde")]
     pub portrait: Url,
 }
 
