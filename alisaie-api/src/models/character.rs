@@ -46,7 +46,7 @@ pub struct ClassJob {
     pub job_id: u64,
     pub exp_level: u64,
     pub exp_level_max: u64,
-    pub exp_level_remaining: u64,
+    pub exp_level_togo: u64,
 }
 
 #[derive(Debug, Deserialize)]
